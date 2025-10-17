@@ -87,7 +87,7 @@ No manual steps are required from end‑users beyond approving normal macOS secu
 - **`Configuration/`** - Contains the `.mobileconfig` to upload to Intune and push to devices.  
   > You can edit this in **iMazing Profile Editor** to tailor payloads (Wi‑Fi, certs, privacy, etc.) before export.
 - **`icons/`** - Application icons displayed during onboarding (keeps the dialog consistent with your app set).
-- **`scripts/`** - Numbered onboarding scripts for clear ordering/tracking (e.g., `00-bootstrap.sh`, `10-install-core.sh`, `20-apply-config.sh`, `99-finish.sh`).
+- **`scripts/`** - Numbered onboarding scripts for clear ordering/tracking.
 
 > **Recommended workflow**
 1. **Customize** your banner and icons to reflect branding.  
