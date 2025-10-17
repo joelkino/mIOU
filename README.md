@@ -46,28 +46,9 @@ Welcome to **mIOU** — an automated, reliable onboarding experience for macOS d
 
 - Your Mac is **managed by Intune** and compliant with corporate policies.
 - Core applications are installed and ready to use.
+- If you configured your Dock, it should show only the apps you want.
 - You can open **Company Portal** to see assigned apps or run a device compliance check anytime.
 
-If anything looks off (missing apps, repeated prompts), see **Troubleshooting** below or contact support.
-
----
-
-## Troubleshooting (End‑Users)
-
-- **I don’t see the progress window.**  
-  Ensure you have internet access. If it doesn’t appear within 5–10 minutes, restart your Mac and try again.
-
-- **An app failed to install.**  
-  Wait a few minutes—mIOU will retry automatically. If it persists, open **Company Portal** to re‑install or contact support.
-
-- **I’m stuck on a permission prompt.**  
-  Choose **Allow**/**Approve** for company‑managed apps. If unsure, capture a screenshot and send it to support.
-
-- **Compliance shows “not met.”**  
-  Open **Company Portal → Devices → Check compliance**. If it remains non‑compliant, contact support.
-
-> **Need help?**  
-> Email: _support@yourcompany.example_ • Phone/Teams: _+61 0 0000 0000_ • Hours: _Mon–Fri 9:00–17:00 (AEST)_
 
 ---
 
@@ -102,15 +83,11 @@ No manual steps are required from end‑users beyond approving normal macOS secu
 > Delivering a single, predictable bootstrap step via Intune proved the quickest and most reliable way to put the required tools on devices before running the full onboarding flow.
 
 ### `SECT/` folder contents
-- **`Banner/`**  
-  Branded banner image used by SwiftDialog (replace with your organization’s image).
-- **`Configuration/`**  
-  Contains the `.mobileconfig` to upload to Intune and push to devices.  
+- **`Banner/`** - Branded banner image used by SwiftDialog (replace with your organization’s image).
+- **`Configuration/`** - Contains the `.mobileconfig` to upload to Intune and push to devices.  
   > You can edit this in **iMazing Profile Editor** to tailor payloads (Wi‑Fi, certs, privacy, etc.) before export.
-- **`icons/`**  
-  Application icons displayed during onboarding (keeps the dialog consistent with your app set).
-- **`scripts/`**  
-  Numbered onboarding scripts for clear ordering/tracking (e.g., `00-bootstrap.sh`, `10-install-core.sh`, `20-apply-config.sh`, `99-finish.sh`).
+- **`icons/`** - Application icons displayed during onboarding (keeps the dialog consistent with your app set).
+- **`scripts/`** - Numbered onboarding scripts for clear ordering/tracking (e.g., `00-bootstrap.sh`, `10-install-core.sh`, `20-apply-config.sh`, `99-finish.sh`).
 
 > **Recommended workflow**
 1. **Customize** your banner and icons to reflect branding.  
@@ -120,50 +97,28 @@ No manual steps are required from end‑users beyond approving normal macOS secu
 5. **Validate** on a test device (network, app install success, profile application, compliance).  
 6. **Roll out** to production groups with phased rings if needed.
 
-### Security & privacy notes
-- Profiles and policies are delivered via Intune; mIOU does not collect personal content.
-- App installs are transparent; versions and receipts are trackable (via Installomator logs).
-- Baseline configuration aligns devices with required corporate standards.
-
----
-
-## Versioning & updates
-
-- Use semantic version tags (e.g., `v1.2.0`) tied to changes in `scripts/`, `Configuration/`, or app sets.
-- Keep a simple **CHANGELOG.md** documenting:
-  - Added/removed apps
-  - Profile payload changes
-  - Script ordering adjustments
-  - Known issues / mitigations
-
 ---
 
 ## Frequently asked (Admins)
 
-**Can I exclude certain prompts (e.g., background approvals)?**  
-Some macOS approvals require user interaction by design. Where possible, pre‑approve via configuration profiles (PPPC, system extensions) and document any residual prompts in the SwiftDialog copy.
+**Do you support this product?**  
+No, this is provided to the community as is, although as it is based on well-known and very active Open Source projects such as Baseline, SwiftDialog and Installomator, you can find additional information from those projects and online.
 
 **How do I add another app?**  
-Add its icon to `icons/`, update the relevant `scripts/<nn>-install-*.sh` with an Installomator label or custom installer logic, and refresh the dialog steps.
+Add its icon to `icons/`, update the relevant `scripts/<nn>-install-*.sh` with a script to deploy that app or an Installomator label to the Configuration .mobileconfig file. Remember you will need to update the .mobileconfig file in Intune as well.
 
 **Do I need to repackage for every change?**  
 Minor script or profile updates can be pushed via Intune without repackaging the entire flow; keep versions aligned and test on pilot devices.
 
 ---
 
-## Contributing
 
-- PRs welcome for improvements to dialog copy, profile payloads, and installer reliability.
-- Please include:
-  - A short description of the change
-  - Test evidence (pilot device logs/screens)
-  - Rollback notes (if applicable)
 
 ---
 
 ## License
 
-_Replace with your chosen license (e.g., MIT, Apache‑2.0)._
+MIT
 
 ---
 
