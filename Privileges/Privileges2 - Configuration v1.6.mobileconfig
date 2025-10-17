@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>AllowCLIBiometricAuthentication</key>
+			<true/>
+			<key>HideOtherWindows</key>
+			<true/>
+			<key>PayloadDisplayName</key>
+			<string>SAP Privileges app</string>
+			<key>PayloadIdentifier</key>
+			<string>corp.sap.privileges.8C8C0854-4F44-46DB-B762-36EB9A0873BA</string>
+			<key>PayloadType</key>
+			<string>corp.sap.privileges</string>
+			<key>PayloadUUID</key>
+			<string>8C8C0854-4F44-46DB-B762-36EB9A0873BA</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ReasonRequired</key>
+			<true/>
+			<key>RequireAuthentication</key>
+			<true/>
+			<key>RevokePrivilegesAtLogin</key>
+			<true/>
+            <key>ShowInMenuBar</key>
+            <true/>
+            <key>RevokePrivilegesAtLogin</key>
+            <true/>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>Privileges - Configuration v1.6</string>
+	<key>PayloadIdentifier</key>
+	<string>com.sap.privileges</string>
+	<key>PayloadOrganization</key>
+	<string>Interconnekt</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>8A9FC923-8456-4B15-B311-A890F2182A8C</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
